@@ -55,7 +55,7 @@ jobs:
       - name: Prepare cache
         run: mkdir -p /tmp/.buildx-cache || true
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: .
           file: ./Dockerfile
