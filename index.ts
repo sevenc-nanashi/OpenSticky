@@ -19,20 +19,18 @@ const client = new discord.Client({
   },
 })
 
+const PREFIX = process.env.PREFIX || "p:"
+
 client.on("ready", () => {
   console.log(`Logged in as ${client.user?.tag}.`)
-  console.log(`[-- Environment --]`)
-  console.log(`  NODE_ENV: ${process.env.NODE_ENV}`)
-  console.log(`  Node.js version: ${process.version}`)
-  console.log(`  Discord.js version: ${discord.version}`)
 })
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return
 
-  if (!message.content.startsWith("p:pin ")) return
+  if (!message.content.startsWith(PREFIX + "pin ")) return
 
-  const content = message.content.slice("p:pin ".length).trim()
+  const content = message.content.slice((PREFIX + "pin ").length).trim()
 
   console.log(`[PIN] New pin: ${content}, by ${message.author.tag}`)
   await db.save("p:" + message.channelId, content)
@@ -42,7 +40,7 @@ client.on("messageCreate", async (message) => {
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return
 
-  if (!(message.content === "p:unpin")) return
+  if (!(message.content === PREFIX + "unpin")) return
 
   console.log(
     `[UNPIN] Unpinning from ${message.channelId}, by ${message.author.tag}`
@@ -72,11 +70,24 @@ client.on("messageCreate", async (message) => {
   })
 })
 
-console.log("[[- OpenSticky -]]")
+const maskedToken = process.env.TOKEN?.replace(/(?<=\.)[^.]+$/, (m) =>
+  "*".repeat(m.length)
+)
+
+console.log("[[-- OpenSticky --]]")
 console.log(`  by sevenc-nanashi <https://sevenc7c.com>`)
 console.log(``)
 console.log(`  This bot is licensed under the MIT License.`)
 console.log(`  https://github.com/sevenc-nanashi/OpenSticky`)
+console.log(``)
+console.log(`[-- Environment --]`)
+console.log(`  Node.js version: ${process.version}`)
+console.log(`  Discord.js version: ${discord.version}`)
+console.log(``)
+console.log(`[-- Configuration --]`)
+console.log(`  Prefix: ${PREFIX}`)
+console.log(`  Token: ${maskedToken}`)
+console.log(``)
 console.log(``)
 
 client.login(process.env.TOKEN!)
