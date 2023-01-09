@@ -1,4 +1,4 @@
-# OpenSticky / A open source alternative to [StickyBot](https://stickybot.info)
+# OpenSticky / A open source [StickyBot](https://stickybot.info) alternative
 
 OpenSticky is a open source alternative to [StickyBot](https://stickybot.info).
 It is a Discord bot that allows you to create sticky messages. Sticky messages are messages that are pinned to the bottom of a channel.
