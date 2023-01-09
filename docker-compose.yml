@@ -1,10 +1,10 @@
 services:
   main:
-    build: .
+    image: "ghcr.io/sevenc-nanashi/opensticky"
 
     volumes:
       - "./db_data.json:/app/db_data.json"
-    
+
     environment:
       - "TOKEN"
-
+      - "PREFIX"
