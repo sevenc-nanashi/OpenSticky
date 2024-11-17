@@ -1,14 +1,14 @@
-FROM node:16.17-slim
+FROM node:22.11-slim
 
 WORKDIR /app
 
-RUN npm install -g pnpm
+RUN npx corepack enable
 
 COPY ./package.json ./pnpm-lock.yaml ./
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --prod
 
-COPY . .
+COPY dist ./dist
 
 RUN pnpm build
 
