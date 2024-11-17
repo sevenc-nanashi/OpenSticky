@@ -7,4 +7,3 @@ services:
 
     environment:
       - "TOKEN"
-      - "PREFIX"
