@@ -8,7 +8,7 @@ COPY ./package.json ./pnpm-lock.yaml ./
 
 RUN pnpm install --frozen-lockfile --prod
 
-COPY dist ./dist
+COPY . .
 
 RUN pnpm build
 
