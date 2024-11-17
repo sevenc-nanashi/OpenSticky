@@ -2,6 +2,7 @@
   "name": "opensticky",
   "version": "1.0.0",
   "type": "module",
+  "packageManager": "pnpm@9.13.2",
   "description": "",
   "main": "index.ts",
   "scripts": {
