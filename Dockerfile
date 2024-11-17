@@ -8,8 +8,6 @@ COPY ./package.json ./pnpm-lock.yaml ./
 
 RUN pnpm install --frozen-lockfile --prod
 
-COPY . .
-
-RUN pnpm build
+COPY dist ./dist
 
 CMD ["node", "dist/index.js"]

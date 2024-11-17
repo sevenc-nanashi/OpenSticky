@@ -2,5 +2,5 @@
 !package.json
 !pnpm-lock.yaml
 !tsconfig.json
-!*.ts
+!dist
 
