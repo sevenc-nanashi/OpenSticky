@@ -30,9 +30,6 @@ importers:
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
-      prettier:
-        specifier: ^3.3.3
-        version: 3.3.3
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -340,11 +337,6 @@ packages:
   magic-bytes.js@1.10.0:
     resolution: {integrity: sha512-/k20Lg2q8LE5xiaaSkMXk4sfvI+9EGEykFS4b0CHHGWqDYU0bGUFSwchNOMA56D7TCs9GwVTkqe9als1/ns8UQ==}
 
-  prettier@3.3.3:
-    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
-    engines: {node: '>=14'}
-    hasBin: true
-
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
@@ -631,8 +623,6 @@ snapshots:
   lodash@4.17.21: {}
 
   magic-bytes.js@1.10.0: {}
-
-  prettier@3.3.3: {}
 
   resolve-pkg-maps@1.0.0: {}
 
