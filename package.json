@@ -10,7 +10,8 @@
     "start": "tsx index.ts",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "lint": "biome check"
+    "lint": "biome check",
+    "lint:fix": "biome check --write --unsafe"
   },
   "keywords": [],
   "author": "",
