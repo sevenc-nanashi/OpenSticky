@@ -95,7 +95,10 @@ client.on("interactionCreate", async (interaction) => {
     "p:" + interaction.channelId,
     modalResult.fields.getField("content").value,
   )
-  await modalResult.reply("Pinned!")
+  await modalResult.reply({
+    ephemeral: true,
+    content: "Pinned!",
+  })
 })
 
 client.on("interactionCreate", async (interaction) => {
@@ -106,7 +109,10 @@ client.on("interactionCreate", async (interaction) => {
     `[UNPIN] Unpinning from ${interaction.channelId}, by ${interaction.user.tag}`,
   )
   await db.del("p:" + interaction.channelId)
-  await interaction.reply("Unpinned!")
+  await interaction.reply({
+    ephemeral: true,
+    content: "Unpinned!",
+  })
 })
 
 client.on("messageCreate", async (message) => {
